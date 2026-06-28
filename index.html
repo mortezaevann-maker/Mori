@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mori Hairstyle</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -15,7 +16,7 @@
         }
 
         body {
-            /* پس‌زمینه متحرک و زنده نئونی */
+            /* پس‌زمینه متحرک نئونی */
             background: linear-gradient(-45deg, #000000, #160e05, #0c0c0c, #241508);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
@@ -55,27 +56,25 @@
             width: 100%;
             max-width: 280px;
             margin: 0 auto 20px auto;
-            background: transparent; /* حذف کادر برای یکدست شدن لوگو با پس‌زمینه */
+            background: transparent;
             padding: 10px;
             position: relative;
         }
 
-        /* 🪄 جادوی حذف پس‌زمینه خاکستری و نئونی کردن لوگو */
+        /* تنظیمات عکس جدید */
         .logo {
             width: 100%;
             height: auto;
-            max-height: 120px;
+            max-height: 130px;
             object-fit: contain;
-            /* این فیلتر رنگ خاکستری خالص پس‌زمینه عکس را حذف و شفاف می‌کند */
-            mix-blend-mode: screen; 
-            /* اضافه کردن سایه درخشان نارنجی به اجزای لوگو */
-            filter: drop-shadow(0 0 12px rgba(255, 102, 0, 0.6)) contrast(1.2);
+            /* هاله نورانی دور عکس جدید */
+            filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5));
             animation: logoGlow 3s ease-in-out infinite alternate;
         }
 
         @keyframes logoGlow {
-            0% { filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.4)) contrast(1.1); }
-            100% { filter: drop-shadow(0 0 18px rgba(255, 102, 0, 0.8)) contrast(1.3); }
+            0% { filter: drop-shadow(0 0 6px rgba(255, 102, 0, 0.3)); }
+            100% { filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.7)); }
         }
 
         .title {
@@ -203,28 +202,34 @@
 
     <div class="container">
         
+        <!-- Profile Section -->
         <div class="profile-section">
             <div class="logo-container">
-                <img src="IMG_9267.png" alt="Mori Hairstyle" class="logo">
+                <!-- اسم عکس به فایل جدید تغییر کرد -->
+                <img src="IMG_4902.png" alt="Mori Hairstyle" class="logo">
             </div>
             <h1 class="title">Mori Hairstyle</h1>
             <p class="subtitle">Professional Hair Grooming</p>
         </div>
 
+        <!-- Links Section -->
         <div class="links-container">
             
+            <!-- Instagram -->
             <a href="https://www.instagram.com/mori__hairstyle?igsh=eTM0c2lianZxd2sz&utm_source=qr" target="_blank" class="link-card instagram">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
                 <i class="fas fa-chevron-right arrow"></i>
             </a>
 
+            <!-- WhatsApp -->
             <a href="https://api.whatsapp.com/send?phone=96897863928" target="_blank" class="link-card whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span>WhatsApp</span>
                 <i class="fas fa-chevron-right arrow"></i>
             </a>
 
+            <!-- Google Maps Location -->
             <a href="https://maps.app.goo.gl/X6feKLVvSwkMEmYd9?g_st=ic" target="_blank" class="link-card location">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Our Location</span>
@@ -233,10 +238,12 @@
 
         </div>
 
+        <!-- دکمه تماس مستقیم -->
         <a href="tel:+96897863928" class="call-btn">
             <i class="fas fa-phone-alt"></i> Call Us Directly
         </a>
 
+        <!-- Footer -->
         <div class="footer">
             <p>© 2026 <strong>Mori Hairstyle</strong>. All Rights Reserved.</p>
         </div>
