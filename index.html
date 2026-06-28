@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mori Hairstyle</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -15,7 +16,10 @@
         }
 
         body {
-            background: radial-gradient(circle at top, #2c1a0a 0%, #101010 60%, #000000 100%);
+            /* پس‌زمینه متحرک و زنده نئونی */
+            background: linear-gradient(-45deg, #000000, #1a0f05, #121212, #2c1a0a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -25,69 +29,63 @@
             overflow-x: hidden;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
             width: 100%;
             max-width: 420px;
             text-align: center;
             padding: 40px 25px;
-            background: rgba(16, 16, 16, 0.6);
+            background: rgba(20, 20, 20, 0.75);
             border-radius: 24px;
-            border: 1px solid rgba(255, 102, 0, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 102, 0, 0.25);
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.1);
+            backdrop-filter: blur(15px);
         }
 
         /* Profile Section */
         .profile-section {
             margin-bottom: 35px;
-            position: relative;
         }
 
         .logo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 18px;
+            width: 100%;
+            max-width: 260px;
+            margin: 0 auto 20px auto;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
+        /* اصلاح نمایش لوگو برای جلوگیری از کات شدن */
         .logo {
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff6600;
-            box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo-container::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 130px;
-            height: 130px;
-            background: rgba(255, 102, 0, 0.15);
-            border-radius: 50%;
-            filter: blur(15px);
-            z-index: 1;
+            width: 100%;
+            height: auto;
+            max-height: 110px;
+            object-fit: contain; /* از کات شدن جلوگیری میکند */
+            filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.3));
         }
 
         .title {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             letter-spacing: 0.5px;
             color: #ffffff;
             margin-bottom: 6px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
         .subtitle {
             font-size: 13px;
-            color: #b0b0b0;
-            font-weight: 400;
-            letter-spacing: 1.5px;
+            color: #ff6600; /* رنگ نارنجی برای روح بخشیدن */
+            font-weight: 600;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
@@ -102,8 +100,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
-            border: 1px solid rgba(255, 102, 0, 0.15);
+            background: rgba(255, 102, 0, 0.03);
+            border: 1px solid rgba(255, 102, 0, 0.2);
             padding: 18px 22px;
             border-radius: 14px;
             text-decoration: none;
@@ -113,21 +111,6 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-        }
-
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: 0.5s;
-        }
-
-        .link-card:hover::before {
-            left: 100%;
         }
 
         .link-card i {
@@ -154,33 +137,58 @@
 
         /* Hover Effects */
         .link-card:hover {
-            transform: translateY(-3px);
-            background: #ff6600;
-            border-color: #ff8533;
-            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, #ff6600 0%, #ff4500 100%);
+            border-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.6);
         }
 
         .link-card:hover i,
-        .link-card:hover span {
-            color: #000000;
-        }
-
+        .link-card:hover span,
         .link-card:hover .arrow {
             color: #000000;
             opacity: 1;
+        }
+
+        .link-card:hover .arrow {
             transform: translateX(5px);
+        }
+
+        /* دکمه شناور تماس مستقیم برای حس زنده‌تر بودن */
+        .call-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            background: transparent;
+            border: 2px solid #ff6600;
+            color: #ff6600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.2);
+        }
+
+        .call-btn:hover {
+            background: #ff6600;
+            color: #000000;
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
         }
 
         /* Footer */
         .footer {
-            margin-top: 45px;
+            margin-top: 35px;
             font-size: 11px;
-            color: #444444;
+            color: #555555;
             letter-spacing: 1px;
         }
         
         .footer strong {
-            color: #666666;
+            color: #888888;
         }
     </style>
 </head>
@@ -188,6 +196,7 @@
 
     <div class="container">
         
+        <!-- Profile Section -->
         <div class="profile-section">
             <div class="logo-container">
                 <img src="IMG_9267.png" alt="Mori Hairstyle" class="logo">
@@ -196,20 +205,24 @@
             <p class="subtitle">Professional Hair Grooming</p>
         </div>
 
+        <!-- Links Section -->
         <div class="links-container">
             
+            <!-- Instagram -->
             <a href="https://www.instagram.com/mori__hairstyle?igsh=eTM0c2lianZxd2sz&utm_source=qr" target="_blank" class="link-card instagram">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
                 <i class="fas fa-chevron-right arrow"></i>
             </a>
 
+            <!-- WhatsApp -->
             <a href="https://api.whatsapp.com/send?phone=96897863928" target="_blank" class="link-card whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span>WhatsApp</span>
                 <i class="fas fa-chevron-right arrow"></i>
             </a>
 
+            <!-- Google Maps Location -->
             <a href="https://maps.app.goo.gl/X6feKLVvSwkMEmYd9?g_st=ic" target="_blank" class="link-card location">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Our Location</span>
@@ -218,6 +231,12 @@
 
         </div>
 
+        <!-- دکمه تماس تلفنی مستقیم -->
+        <a href="tel:+96897863928" class="call-btn">
+            <i class="fas fa-phone-alt"></i> Call Us Directly
+        </a>
+
+        <!-- Footer -->
         <div class="footer">
             <p>© 2026 <strong>Mori Hairstyle</strong>. All Rights Reserved.</p>
         </div>
