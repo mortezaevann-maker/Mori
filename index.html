@@ -1,25 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mori Barbershop</title>
-<style>
-body{margin:0;background:#050505;color:white;font-family:Arial;text-align:center;padding:40px 20px}
-.logo{font-size:60px;font-weight:bold;margin-top:40px}
-.logo span{color:#ff6a00}
-.btn{display:block;margin:22px auto;padding:20px;max-width:330px;border:1px solid #ff6a00;border-radius:18px;color:white;text-decoration:none;font-size:22px;letter-spacing:4px;box-shadow:0 0 18px #ff6a00}
-.icon{font-size:34px;margin-right:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mori Hairstyle | موری هیراستایل</title>
+    <!-- اضافه کردن فونت زیبا و آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* تنظیمات پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* پس‌زمینه مشکی مات با سایه ملایم نارنجی در بالا */
+            background: radial-gradient(circle at top, #2c1a0a 0%, #101010 60%, #000000 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            padding: 40px 25px;
+            background: rgba(16, 16, 16, 0.6);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 102, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px); /* افکت شیشه مات */
+        }
+
+        /* بخش لوگو و پروفایل */
+        .profile-section {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .logo {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6600; /* مرز نارنجی اصلی */
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* هاله نورانی پشت لوگو */
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130px;
+            height: 130px;
+            background: rgba(255, 102, 0, 0.15);
+            border-radius: 50%;
+            filter: blur(15px);
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #b0b0b0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* بخش دکمه‌ها و لینک‌ها */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+            border: 1px solid rgba(255, 102, 0, 0.15);
+            padding: 18px 22px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* افکت براق روی دکمه در حالت عادی */
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: 0.5s;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card i {
+            font-size: 22px;
+            width: 35px;
+            text-align: center;
+            color: #ff6600; /* آیکون‌ها نارنجی */
+            transition: transform 0.3s ease;
+        }
+
+        .link-card span {
+            flex-grow: 1;
+            margin-right: 15px;
+            text-align: right;
+        }
+
+        .link-card .arrow {
+            font-size: 14px;
+            opacity: 0.5;
+            color: #ffffff;
+            transform: translateX(0);
+            transition: all 0.3s ease;
+        }
+
+        /* --- استایل هوور (Hover) دکمه‌ها (تم نارنجی براق) --- */
+        .link-card:hover {
+            transform: translateY(-3px);
+            background: #ff6600; /* پس‌زمینه نارنجی کامل */
+            border-color: #ff8533;
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5);
+        }
+
+        /* تغییر رنگ آیکون و متن در حالت هوور */
+        .link-card:hover i,
+        .link-card:hover span {
+            color: #000000; /* متن و آیکون مشکی می‌شوند */
+        }
+
+        .link-card:hover .arrow {
+            color: #000000;
+            opacity: 1;
+            transform: translateX(-5px); /* حرکت پیکان */
+        }
+
+        /* فوتر کوچک پایین صفحه */
+        .footer {
+            margin-top: 45px;
+            font-size: 11px;
+            color: #444444;
+            letter-spacing: 1px;
+        }
+        
+        .footer strong {
+            color: #666666;
+        }
+    </style>
 </head>
 <body>
 
-<div class="logo">Mo<span>R</span>I</div>
+    <div class="container">
+        
+        <!-- بخش پروفایل و لوگو -->
+        <div class="profile-section">
+            <div class="logo-container">
+                <!-- نام فایل لوگوی خود را logo.png بگذارید و در کنار این فایل آپلود کنید -->
+                <img src="logo.png" alt="Mori Hairstyle" class="logo">
+            </div>
+            <h1 class="title">Mori Hairstyle</h1>
+            <p class="subtitle">PROFESSIONAL HAIR GROOMING</p>
+        </div>
 
-<a class="btn" href="https://www.instagram.com/mori__hairstyle">📸 INSTAGRAM</a>
+        <!-- بخش لینک‌ها -->
+        <div class="links-container">
+            
+            <!-- اینستاگرام -->
+            <a href="https://www.instagram.com/mori__hairstyle?igsh=eTM0c2lianZxd2sz&utm_source=qr" target="_blank" class="link-card instagram">
+                <i class="fab fa-instagram"></i>
+                <span>اینستاگرام</span>
+                <i class="fas fa-chevron-left arrow"></i>
+            </a>
 
-<a class="btn" href="https://wa.me/96897863928">💬 WHATSAPP</a>
+            <!-- واتساپ -->
+            <a href="https://wa.me/96897863928" target="_blank" class="link-card whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>واتساپ (عمان)</span>
+                <i class="fas fa-chevron-left arrow"></i>
+            </a>
 
-<a class="btn" href="https://maps.app.goo.gl/ieW47cS7xNuskg5w6?g_st=ic">📍 LOCATION</a>
+            <!-- لوکیشن مغازه -->
+            <a href="https://maps.app.goo.gl/X6feKLVvSwkMEmYd9?g_st=ic" target="_blank" class="link-card location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>موقعیت مکانی سالن</span>
+                <i class="fas fa-chevron-left arrow"></i>
+            </a>
+
+        </div>
+
+        <!-- فوتر -->
+        <div class="footer">
+            <p>© 2026 <strong>Mori Hairstyle</strong>. All Rights Reserved.</p>
+        </div>
+
+    </div>
 
 </body>
 </html>
