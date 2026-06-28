@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mori Hairstyle | موری هیراستایل</title>
-    <!-- اضافه کردن فونت زیبا و آیکون‌ها -->
+    <title>Mori Hairstyle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* تنظیمات پایه */
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +15,6 @@
         }
 
         body {
-            /* پس‌زمینه مشکی مات با سایه ملایم نارنجی در بالا */
             background: radial-gradient(circle at top, #2c1a0a 0%, #101010 60%, #000000 100%);
             color: #ffffff;
             display: flex;
@@ -36,10 +34,10 @@
             border-radius: 24px;
             border: 1px solid rgba(255, 102, 0, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px); /* افکت شیشه مات */
+            backdrop-filter: blur(10px);
         }
 
-        /* بخش لوگو و پروفایل */
+        /* Profile Section */
         .profile-section {
             margin-bottom: 35px;
             position: relative;
@@ -56,13 +54,12 @@
             height: 115px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #ff6600; /* مرز نارنجی اصلی */
+            border: 3px solid #ff6600;
             box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
             position: relative;
             z-index: 2;
         }
 
-        /* هاله نورانی پشت لوگو */
         .logo-container::after {
             content: '';
             position: absolute;
@@ -87,13 +84,14 @@
         }
 
         .subtitle {
-            font-size: 14px;
+            font-size: 13px;
             color: #b0b0b0;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        /* بخش دکمه‌ها و لینک‌ها */
+        /* Links Container */
         .links-container {
             display: flex;
             flex-direction: column;
@@ -117,7 +115,6 @@
             overflow: hidden;
         }
 
-        /* افکت براق روی دکمه در حالت عادی */
         .link-card::before {
             content: '';
             position: absolute;
@@ -136,15 +133,15 @@
         .link-card i {
             font-size: 22px;
             width: 35px;
-            text-align: center;
-            color: #ff6600; /* آیکون‌ها نارنجی */
+            text-align: left;
+            color: #ff6600;
             transition: transform 0.3s ease;
         }
 
         .link-card span {
             flex-grow: 1;
-            margin-right: 15px;
-            text-align: right;
+            margin-left: 15px;
+            text-align: left;
         }
 
         .link-card .arrow {
@@ -155,27 +152,26 @@
             transition: all 0.3s ease;
         }
 
-        /* --- استایل هوور (Hover) دکمه‌ها (تم نارنجی براق) --- */
+        /* Hover Effects */
         .link-card:hover {
             transform: translateY(-3px);
-            background: #ff6600; /* پس‌زمینه نارنجی کامل */
+            background: #ff6600;
             border-color: #ff8533;
             box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5);
         }
 
-        /* تغییر رنگ آیکون و متن در حالت هوور */
         .link-card:hover i,
         .link-card:hover span {
-            color: #000000; /* متن و آیکون مشکی می‌شوند */
+            color: #000000;
         }
 
         .link-card:hover .arrow {
             color: #000000;
             opacity: 1;
-            transform: translateX(-5px); /* حرکت پیکان */
+            transform: translateX(5px);
         }
 
-        /* فوتر کوچک پایین صفحه */
+        /* Footer */
         .footer {
             margin-top: 45px;
             font-size: 11px;
@@ -192,43 +188,36 @@
 
     <div class="container">
         
-        <!-- بخش پروفایل و لوگو -->
         <div class="profile-section">
             <div class="logo-container">
-                <!-- نام فایل لوگوی خود را logo.png بگذارید و در کنار این فایل آپلود کنید -->
                 <img src="logo.png" alt="Mori Hairstyle" class="logo">
             </div>
             <h1 class="title">Mori Hairstyle</h1>
-            <p class="subtitle">PROFESSIONAL HAIR GROOMING</p>
+            <p class="subtitle">Professional Hair Grooming</p>
         </div>
 
-        <!-- بخش لینک‌ها -->
         <div class="links-container">
             
-            <!-- اینستاگرام -->
             <a href="https://www.instagram.com/mori__hairstyle?igsh=eTM0c2lianZxd2sz&utm_source=qr" target="_blank" class="link-card instagram">
                 <i class="fab fa-instagram"></i>
-                <span>اینستاگرام</span>
-                <i class="fas fa-chevron-left arrow"></i>
+                <span>Instagram</span>
+                <i class="fas fa-chevron-right arrow"></i>
             </a>
 
-            <!-- واتساپ -->
-            <a href="https://wa.me/96897863928" target="_blank" class="link-card whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=96897863928" target="_blank" class="link-card whatsapp">
                 <i class="fab fa-whatsapp"></i>
-                <span>واتساپ (عمان)</span>
-                <i class="fas fa-chevron-left arrow"></i>
+                <span>WhatsApp</span>
+                <i class="fas fa-chevron-right arrow"></i>
             </a>
 
-            <!-- لوکیشن مغازه -->
             <a href="https://maps.app.goo.gl/X6feKLVvSwkMEmYd9?g_st=ic" target="_blank" class="link-card location">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>موقعیت مکانی سالن</span>
-                <i class="fas fa-chevron-left arrow"></i>
+                <span>Our Location</span>
+                <i class="fas fa-chevron-right arrow"></i>
             </a>
 
         </div>
 
-        <!-- فوتر -->
         <div class="footer">
             <p>© 2026 <strong>Mori Hairstyle</strong>. All Rights Reserved.</p>
         </div>
